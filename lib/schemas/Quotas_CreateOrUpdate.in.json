@@ -1,0 +1,97 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "location": {
+            "required": true,
+            "type": "string"
+        },
+        "quotaName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "Base resource object.",
+                    "properties": {
+                        "id": {
+                            "description": "ID of the resource.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "location": {
+                            "description": "Location of the resource.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of the resource.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "type": {
+                            "description": "Type of Resource.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object",
+                    "x-ms-azure-resource": true
+                }
+            ],
+            "description": "Holds Compute quota information used to control resource allocation.",
+            "properties": {
+                "properties": {
+                    "description": "Properties for a Compute Quota",
+                    "properties": {
+                        "availabilitySetCount": {
+                            "description": "Maximum number of availability sets allowed.",
+                            "format": "int32",
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "coresLimit": {
+                            "description": "Maximum number of cores allowed.",
+                            "format": "int32",
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "maxAllocationPremiumManagedDisksAndSnapshots": {
+                            "description": "Maximum number of managed disks and snapshots of type premium allowed.",
+                            "format": "int32",
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "maxAllocationStandardManagedDisksAndSnapshots": {
+                            "description": "Maximum number of managed disks and snapshots of type standard allowed.",
+                            "format": "int32",
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "virtualMachineCount": {
+                            "description": "Maximum number of virtual machines allowed.",
+                            "format": "int32",
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "vmScaleSetCount": {
+                            "description": "Maximum number of scale sets allowed.",
+                            "format": "int32",
+                            "minimum": 0,
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
